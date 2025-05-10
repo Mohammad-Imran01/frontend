@@ -27,7 +27,10 @@ const Instructors = () => {
         <h2 className="sectionHeading">Meet Your Instructors</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {instructors.map((instructor, index) => (
-            <div key={index} className="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-6">
+            <div
+              key={index}
+              className="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-6"
+            >
               <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200">
                 {instructor.name}
               </h3>
