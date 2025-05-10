@@ -1,0 +1,92 @@
+import React, { useState, useEffect } from "react";
+
+const Nav = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  useEffect(() => {
+    if (window.innerWidth >= 640) {
+      setMenuOpen(false);
+    }
+  }, []);
+
+  return (
+    <div className="relative max-w-[1280px] w-full text-slate-900 dark:text-white flex items-center justify-between text-xl">
+      <a className="text-3xl textTitle font-normal cursor-pointer">
+        Code Point
+      </a>
+
+      {/* Desktop Menu */}
+      <ul className="hidden sm:flex gap-12 max-lg:gap-6 max-md:gap-3">
+        {["Home", "Company", "Marketplace", "Contact"].map((item) => (
+          <li key={item}>
+            <a
+              href="#"
+              onClick={(e) => e.preventDefault()}
+              className="duration-75 ease-in-out hover:text-slate-300 active:translate-y-[1px]"
+            >
+              {item}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      {/* Right Side */}
+      <div className="flex items-center gap-4">
+        <button className="btn-dark">Sign Up</button>
+
+        {/* Hamburger Menu */}
+        <button
+          onClick={toggleMenu}
+          className="sm:hidden flex items-center justify-center w-11 h-11"
+        >
+          <div className="relative flex flex-col justify-between w-[20px] h-[20px] transition-all duration-300 origin-center">
+            <div
+              className={`bg-white h-[2px] w-7 transform transition-all duration-300 origin-left ${
+                menuOpen ? "rotate-[42deg]" : ""
+              }`}
+            ></div>
+            <div
+              className={`bg-white h-[2px] w-1/2 rounded transform transition-all duration-300 ${
+                menuOpen ? "-translate-x-10 opacity-0" : ""
+              }`}
+            ></div>
+            <div
+              className={`bg-white h-[2px] w-7 transform transition-all duration-300 origin-left ${
+                menuOpen ? "-rotate-[42deg]" : ""
+              }`}
+            ></div>
+          </div>
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <ul className="bg-slate-900 rounded-sm absolute top-[120%] left-0 w-full  sm:hidden flex flex-col items-center gap-4 py-2 z-50">
+          {["Home", "Company", "Marketplace", "Contact"].map((item) => (
+            <li
+              key={item}
+              className="hover:bg-slate-800 w-full text-left pl-5 py-2"
+            >
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMenuOpen(false);
+                }}
+                className="text-slate-900 dark:text-white text-lg transition"
+              >
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+export default Nav;
