@@ -2,7 +2,7 @@ import React from "react";
 
 const CourseCard = ({ title, description, duration, level, price }) => {
   return (
-    <div className="dark:bg-gray-600 text-stone-800 dark:text-stone-100 shadow-lg rounded-lg p-6">
+    <div className="rounded-lg border border-slate-400 bg-white/30 dark:bg-slate-700/30 text-stone-800 dark:text-stone-100 shadow-sm/30 p-6">
       <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-50">
         {title}
       </h3>

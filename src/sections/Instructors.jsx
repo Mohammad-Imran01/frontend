@@ -29,7 +29,7 @@ const Instructors = () => {
           {instructors.map((instructor, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-6"
+              className="rounded-lg border border-slate-400 bg-white/30 dark:bg-slate-700/30 text-stone-800 dark:text-stone-100 shadow-sm/30 p-6"
             >
               <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200">
                 {instructor.name}

@@ -54,7 +54,7 @@ const FAQs = () => {
           {faqData.map(({ id, question, answer }) => (
             <li
               key={id}
-              className="mb-4 rounded-lg border bg-white dark:bg-gray-600 text-stone-800 dark:text-stone-100"
+              className="mb-4 rounded-lg border border-slate-400 bg-white/30 dark:bg-slate-700/30 text-stone-800 dark:text-stone-100 shadow-sm/30"
             >
               <button
                 onClick={() => toggle(id)}

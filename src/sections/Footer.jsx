@@ -42,7 +42,7 @@ const Footer = () => {
           </h3>
           <form className="mt-4 flex flex-col gap-3" onSubmit={handleSubmit}>
             <input
-              className="border rounded w-full px-4 py-3 text-slate-800 dark:text-slate-50 leading-tight focus:outline-none focus:shadow-outline"
+              className="border border-slate-400 rounded w-full px-4 py-3 text-slate-800 dark:text-slate-50 leading-tight focus:outline-none focus:shadow-outline"
               type="email"
               placeholder="username@email.com"
               value={email}

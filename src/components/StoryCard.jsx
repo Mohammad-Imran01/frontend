@@ -11,7 +11,7 @@ import React from "react";
 const StoryCard = ({ learner, countries, rate, courses, rating }) => {
   // return <div>{learner + countries + rate + courses + rating}</div>;
   return (
-    <div className="shrink-0 flexCenter rounded-sm shadow-sm/60 h-44   text-slate-600 dark:text-slate-100 w-md">
+    <div className="shrink-0 flexCenter h-44 min-w-md p-4 rounded-lg border border-slate-400 bg-white/30 dark:bg-slate-700/30 text-stone-800 dark:text-stone-100 shadow-sm/30">
       <ul className="flex-col">
         <li>{learner}</li>
         <li>{countries}</li>
