@@ -13,7 +13,7 @@ const Hero = () => {
           destination.
         </p>
         <div className="mt-8 flex gap-4">
-          <button className="btn-light">
+          <button className="btn-light flexCenter gap-1">
             Start here <span className="text-xl">⟶</span>
           </button>
           <button className="btn-dark">Testimonials</button>
