@@ -40,7 +40,7 @@ function App() {
   const Container = ({ children, className = "" }) => {
     return (
       <div
-        className={`w-full flexCenter px-2 md:px-3 lg:px-8 sm:pt-6 md:py-4 lg:pt-6 ${className}`}
+        className={`w-full flexCenter max-sm:pt-3 px-2 md:px-3 lg:px-8 sm:pt-6 md:py-4 lg:pt-6 ${className}`}
       >
         <div className="w-full mx-auto max-w-7xl  sm:px-6 lg:px-8 flexCenter">
           {children}
@@ -52,7 +52,7 @@ function App() {
   return (
     <>
       {/* nav */}
-      <Container className="fixed top-0 left-0 right-0 z-10 py-0! opacity-95 h-16 bg-blue-50 dark:bg-slate-800 shadow-md/10">
+      <Container className="fixed top-0 left-0 right-0 z-10 py-0!  h-16 bg-blue-50/95 dark:bg-slate-800/95 shadow-md/10">
         {/* <div className="bbb"> */}
         <Nav />
         {/* </div> */}
@@ -108,9 +108,7 @@ function App() {
       </Container>
 
       {/* footer */}
-      <Container
-        className="bg-blue-50 dark:bg-slate-800 mt-5"
-      >
+      <Container className="bg-blue-50 dark:bg-slate-800 mt-5">
         {/* <div className="bbb"> */}
         <Footer />
         {/* </div> */}

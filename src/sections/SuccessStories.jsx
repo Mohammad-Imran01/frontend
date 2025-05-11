@@ -53,7 +53,7 @@ const SuccessStories = () => {
         <h2 className="sectionHeading">Success Stories</h2>
         <div className="w-full overflow-hidden">
           <div
-            className="flexCenter py-4 mx-4 h[50px] select-none infiniteScroll hover:[animation-play-state:paused] gap-8 w-full"
+            className="flexCenter py-4 mx-4 select-none infiniteScroll hover:[animation-play-state:paused] gap-8 w-full"
             aria-hidden="true"
           >
             {/* {

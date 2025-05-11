@@ -63,13 +63,10 @@ const Nav = () => {
       {/* Mobile Menu */}
       {
         <ul
-          className={`overflow-hidden bg-slate-100 dark:bg-slate-800 rounded-md absolute right-0 top-16 sm:hidden flex flex-col items-center gap-3 py-3 z-50 shadow-md transition-all duration-300 ${
+          className={`overflow-hidden dark:bg-slate-800 bg-white  fixed right-0 top-16 bottom-0 shadow-md/20 sm:hidden flex flex-col items-center gap-3 py-3 z-50 shadow-md transition-all duration-300 ${
             menuOpen ? "w-1/2 opacity-100" : "w-0 opacity-0"
           }`}
-          style={{
-            height: "calc(100vh - 4rem)",
-            transitionProperty: "width, opacity",
-          }}
+
         >
           {["Home", "Company", "Marketplace", "Contact"].map((item) => (
             <li
