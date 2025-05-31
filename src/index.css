@@ -48,7 +48,7 @@
   } */
 
   .mainRoot {
-    @apply font-generalText min-w-full min-h-full overflow-hidden flex-col justify-center items-center relative text-[16px] leading-[1.5] font-normal text-nowrap;
+    @apply font-generalText flex-col justify-center items-center relative text-[16px] leading-[1.5] font-normal text-nowrap;
   }
 
   a {
