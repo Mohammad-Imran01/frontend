@@ -9,12 +9,11 @@ import FAQs from "./sections/FAQs";
 import Footer from "./sections/Footer";
 
 const FloatingActionButton = () => {
-  const toggleDarkMode = () => {
-    document.documentElement.classList.toggle("dark");
-  };
   return (
     <div
-      onClick={toggleDarkMode}
+      onClick={() => {
+        document.documentElement.classList.toggle("dark");
+      }}
       className="duration-100 active:scale-95 flexCenter h-10 w-10 rounded-full bg-slate-800 text-slate-50 border-2 border-white z-10 fixed bottom-2 right-2 md:right-10 md:bottom-10 cursor-pointer"
     >
       <svg
