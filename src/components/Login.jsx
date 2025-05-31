@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const __userId = "imr@123.com";
 const __userPassword = "123@123";
@@ -6,6 +6,8 @@ const __userPassword = "123@123";
 const Login = ({ loginHandler }) => {
   const [userId, setUserId] = useState("");
   const [userPassword, setUserPassword] = useState("");
+
+  const [wrongCredErrorVisible, setWrongCredErrorVisible] = useState(false);
 
   const handleSetUserId = (val) => {
     setUserId(val);
@@ -21,6 +23,7 @@ const Login = ({ loginHandler }) => {
     } else {
       console.log("Loggin unsuccessfull");
       loginHandler(false);
+      setWrongCredErrorVisible(true);
     }
   };
 
@@ -30,6 +33,23 @@ const Login = ({ loginHandler }) => {
         <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-6">
           Login to Your Account
         </h2>
+        {/* ********************************************************* */}
+        {wrongCredErrorVisible && (
+          <div className="mb-3 border-2 rounded-lg border-red-400 bg-red-200 text-stone-900 py-2 px-2 flex justify-between items-start gap-2">
+            <h3 className="text-wrap">
+              The email or password in incorrect, try again or sign up if you
+              haven't already
+            </h3>
+            <button
+              onClick={() => setWrongCredErrorVisible(false)}
+              className="flex justify-center items-center text-red-500 border pt-[1px] h-5 w-5 border-red-400 rounded-full  leading-0 shrink-0 flex-wrap text-sm"
+            >
+              X
+            </button>
+          </div>
+        )}
+        {/* ********************************************************* */}
+
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
             <label

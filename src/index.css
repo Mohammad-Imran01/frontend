@@ -66,7 +66,16 @@
   .textTitle {
     @apply font-specialTitle;
   }
-
+  .pentagon {
+    clip-path: polygon(
+      50% 0%,     /* Top point */
+      100% 38%,   /* Right top */
+      82% 100%,   /* Right bottom */
+      18% 100%,   /* Left bottom */
+      0% 38%      /* Left top */
+    );
+  }
+  
   .flexCenter {
     @apply flex items-center justify-center;
   }
