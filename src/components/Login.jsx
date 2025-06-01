@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const __userId = "imr@123.com";
 const __userPassword = "123@123";
@@ -15,14 +16,35 @@ const Login = ({ loginHandler }) => {
   const handleSetUserPassword = (val) => {
     setUserPassword(val);
   };
-  const handleSubmit = (ev) => {
+  const handleLoginSubmit = async (ev) => {
     ev.preventDefault();
-    if (__userId === userId && __userPassword === userPassword) {
-      console.log("Logging successful");
-      loginHandler(true);
-    } else {
-      console.log("Loggin unsuccessfull");
-      loginHandler(false);
+    try {
+      const packetuserCredentials = {
+        email: userId,
+        password: userPassword,
+      };
+      const response = await axios.get(
+        "http://localhost:5000/api/login",
+        packetuserCredentials
+      );
+
+      if (response.data.success) {
+        loginHandler(true);
+      } else {
+        loginHandler(false);
+        setWrongCredErrorVisible(true);
+      }
+
+      // if (__userId === userId && __userPassword === userPassword) {
+      //   console.log("Logging successful");
+      //   loginHandler(true);
+      // } else {
+      //   console.log("Loggin unsuccessfull");
+      //   loginHandler(false);
+      //   setWrongCredErrorVisible(true);
+      // }
+    } catch (err) {
+      console.error("Login error", err);
       setWrongCredErrorVisible(true);
     }
   };
@@ -50,7 +72,7 @@ const Login = ({ loginHandler }) => {
         )}
         {/* ********************************************************* */}
 
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <form className="space-y-6" onSubmit={handleLoginSubmit}>
           <div>
             <label
               htmlFor="email"
